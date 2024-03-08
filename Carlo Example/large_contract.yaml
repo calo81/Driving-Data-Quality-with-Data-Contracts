@@ -1,0 +1,22 @@
+name: Customer
+description: A customer of our e-commerce website.
+owner: product-team@data-contracts.com
+version: 1
+governance:
+  personal_data: true
+  slos:
+    freshness: 30min
+  expiration:
+  access:
+    - group1
+    - group2
+schema:
+  provided:
+    url: http://xxx.some-avro.com/customer_avro
+serving:
+  warehouse:
+    dataset: customer_dataset
+    refresh_rate: 15min   
+  broker:
+    topic: customer_v1     
+  dashboard: customer_dashboard   
